@@ -5,7 +5,8 @@ download.file(data_url, "power.zip")
 #Unzips downloaded file into folder called 'power'
 unzip("power.zip", exdir="power")
 
-#Reads the txt file, while addressing missing values, limiting the rows read to the last row with Feb 2nd 2007 data, as well as specifying column classes
+#Reads the txt file, while addressing missing values, limiting the rows read to the last row with Feb 2nd 2007 data, 
+#as well as specifying column classes
 power <- read.table("~/power/household_power_consumption.txt", header=TRUE, sep=";", na.strings = "?", nrows=69516, colClasses = c('character','character','numeric','numeric','numeric','numeric','numeric','numeric','numeric'))
 
 #select only rows pertaining to Feb 1st 2007 to Feb 2nd 2007
@@ -37,7 +38,3 @@ power1$datetime <- as.POSIXct(datetime)
 png("plot2.png", width = 480, height = 480)
 plot(power1$Global_active_power~power1$datetime, type="l", ylab="Global Active Power (kilowatts)", xlab=" ")
 dev.off()
-
-
-
-
