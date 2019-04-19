@@ -38,4 +38,3 @@ power1$datetime <- as.POSIXct(datetime)
 png("plot1.png", width = 480, height = 480)
 hist(power1$Global_active_power, xlab = " Global Active Power (kilowatts)", col="red", main = "Global Active Power")
 dev.off()
-
